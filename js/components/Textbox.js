@@ -1,7 +1,7 @@
 export function Textbox() {
     let Textbox = $(`
         <div class="textbox">
-            <input type="text" name="message" placeholder="Start typing your message..." class="input">
+            <textarea type="text" name="message" placeholder="Start typing your message..." class="input"></textarea>
             <div class="btns">
             <label for="img">
                 <span class="send">

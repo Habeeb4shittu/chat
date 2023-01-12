@@ -3,9 +3,28 @@
 @import './partials/sidebar';
 @import './partials/chatarea';
 @import './partials/textbox';
+@import './partials/modal';
 
 body {
-    display: flex;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    background     : none;
+}
+
+.main {
+    display   : flex;
+    height    : 100%;
+    width     : 100%;
+    overflow  : hidden;
+    gap       : .1rem;
+    box-shadow: 0 0 2px 2px lighten($color: $primary, $amount: 10);
+
+    @media screen and (min-width: $lgScreen) {
+        border-radius: $radius;
+        height       : 75vh;
+        width        : 70%;
+    }
 }
 
 aside {
@@ -67,7 +86,7 @@ main {
     }
 
     .content {
-        height: 100%;
+        height: calc(100% - 2.5rem);
         width : 100%;
     }
 }

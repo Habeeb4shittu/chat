@@ -23,4 +23,15 @@ setTimeout(() => {
 $(document).ready(function () {
     Chatpage()
     Chat()
+    $(".opt.logout").click(function () {
+        $(".logout-modal").addClass("show")
+        $(".overlay").addClass("show")
+    })
+    $(".butn.no").click(function () {
+        $(".logout-modal").removeClass("show")
+        $(".overlay").removeClass("show")
+    })
+    $(".butn.out").click(function () {
+        location.href = '../src/logout.php'
+    })
 });

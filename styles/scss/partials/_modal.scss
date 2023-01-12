@@ -1,0 +1,57 @@
+.logout-modal {
+    width          : 260px;
+    background     : white;
+    height         : fit-content;
+    padding        : 1rem;
+    position       : fixed;
+    z-index        : 4;
+    display        : flex;
+    transform      : translateX(-500%);
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    border-radius  : $radius;
+    transition     : 1s;
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    .ico {
+        color    : red;
+        font-size: 2rem;
+    }
+
+    .confirm {
+        .butn {
+            width        : 4rem;
+            height       : fit-content;
+            border       : navajowhite;
+            border-radius: $halfRadius;
+            padding      : 0.3rem;
+
+            &.out {
+                background: red;
+                color     : $text;
+            }
+
+            &.no {
+                color : $primary;
+                border: 1px solid $primary;
+            }
+        }
+    }
+}
+
+.overlay {
+    width     : 100vw;
+    height    : 100vh;
+    position  : fixed;
+    background: #000000ab;
+    transition: 1s;
+    display   : none;
+
+    &.show {
+        display: block;
+    }
+}
