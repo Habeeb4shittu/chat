@@ -1,2 +1,73 @@
 @import './partials/var';
 @import './partials/root';
+@import './partials/sidebar';
+@import './partials/chatarea';
+@import './partials/textbox';
+
+body {
+    display: flex;
+}
+
+aside {
+    height    : 100%;
+    transition: .5s;
+    overflow  : hidden;
+    transform : translateX(-150%);
+    width     : 0;
+
+    &.slide {
+        transform: translateX(0);
+        width    : 70%;
+    }
+
+    @media screen and (min-width: $lgScreen) {
+        transform: translateX(0);
+        width    : 22%;
+    }
+}
+
+main {
+    height         : 100%;
+    background     : $text;
+    width          : 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    overflow       : hidden;
+
+    &.full-width {
+        width: calc(100% - 70%);
+    }
+
+    @media screen and (min-width: $lgScreen) {
+        width: calc(100% - 22%);
+    }
+
+    header {
+        width          : 100%;
+        height         : 2.5rem;
+        display        : flex;
+        justify-content: space-between;
+        padding        : 1rem;
+
+        span {
+            cursor: pointer;
+
+            .info {
+                color    : $primary;
+                font-size: 1.2rem;
+
+                &.bars {
+                    @media screen and (min-width: $lgScreen) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        height: 100%;
+        width : 100%;
+    }
+}

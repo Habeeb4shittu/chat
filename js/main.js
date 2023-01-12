@@ -1,3 +1,5 @@
+import { Chat } from "./components/Chat.js"
+import { Chatpage } from "./pages/chatPage.js"
 let count = 1
 $(".eye").click(function () {
     count++
@@ -18,3 +20,7 @@ $(".error").parent().find(".inputs").addClass("redBord")
 setTimeout(() => {
     $(".error-big").fadeOut()
 }, 1500);
+$(document).ready(function () {
+    Chatpage()
+    Chat()
+});

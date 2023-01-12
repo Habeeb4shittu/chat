@@ -28,12 +28,13 @@ if (isset($_POST['submit'])) {
     } else if ($details["password"] !== $details["conpassword"]) {
         $error["mismatch"] = "Password mismatch";
     } else {
-        $stmt = $add->prepare('INSERT INTO users(firstname, lastname, email, gender, user_password) VALUES(:firstname, :lastname, :email, :gender, :user_password)');
+        $stmt = $add->prepare('INSERT INTO users(firstname, lastname, email, gender, image,  user_password) VALUES(:firstname, :lastname, :email, :gender,  :image,:user_password)');
         $stmt->execute([
             ":firstname" => $details['firstname'],
             ":lastname" => $details['lastname'],
             ":email" => $details['email'],
             ":gender" => $details['gender'],
+            ":image" => $details['gender'],
             ":user_password" => password_hash($details['password'], PASSWORD_DEFAULT),
         ]);
         header('location: index.php');

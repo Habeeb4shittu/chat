@@ -1,0 +1,14 @@
+.chatarea {
+    height         : calc(100% - 2.5rem);
+    width          : 100%;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+
+    .chats {
+        height  : calc(100% - 3rem);
+        width   : 100%;
+        padding : 1rem;
+        overflow: auto;
+    }
+}
