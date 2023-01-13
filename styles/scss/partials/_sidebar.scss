@@ -32,6 +32,10 @@
                 display: none;
             }
 
+            @media screen and (min-width: $mdScreen) and (max-width: $lgScreen) {
+                display: none;
+            }
+
             .times {
                 font-size: 1.2rem;
                 color    : $text;
@@ -45,6 +49,13 @@
         gap            : .5rem;
         overflow-y     : auto;
         scrollbar-width: thin;
+        transition     : .5s;
+        width          : 100%;
+
+        &.slide {
+            width   : 0;
+            overflow: hidden;
+        }
 
         .btn {
             display        : flex;
@@ -70,7 +81,7 @@
                 padding-left: 0;
                 color       : $text;
                 position    : relative;
-                font-size   : 1.2rem;
+                font-size   : 1rem;
                 font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
                 // width      : fit-content;
@@ -144,21 +155,37 @@
             justify-content: space-between;
             align-items    : center;
             width          : 100%;
-            background     : lighten($color: $primary, $amount: 40%);
+            background     : lighten($color: $primary, $amount: 30%);
             border-radius  : 50px;
             padding        : $halfPad;
             cursor         : pointer;
+            transition     : 1s;
             border         : none;
 
+            &:hover {
+                background: none;
+                border    : 1px solid $text;
+
+                p {
+                    color: $text;
+                }
+
+                .log-ico {
+                    color: $text;
+                }
+            }
+
             p {
+                transition   : 1s;
                 font-size    : 1.1rem;
                 margin-bottom: 0;
-                color        : $bg;
+                color        : $primary;
             }
 
             .log-ico {
-                font-size: 1.1rem;
-                color    : $bg;
+                transition: 1s;
+                font-size : 1.1rem;
+                color     : $primary;
 
                 &.out {
                     color: red;

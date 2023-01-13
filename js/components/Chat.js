@@ -8,10 +8,7 @@ export function Chat() {
             </div>
         </div>
     `)
-    let modal = $(`
-        
-    `)
-    $(".content").append(modal)
     $(".content").append(content)
+    $(".content").find(".my-friends").show(1000)
     Textbox()
 }

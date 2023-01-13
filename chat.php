@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/src/chatController.php'
+require_once __DIR__ . '/src/chatController.php';
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ require_once __DIR__ . '/src/chatController.php'
                             <div class="image">
                                 <img src="./assets/<?=$result['image']?>.jpeg" alt="">
                             </div>
-                            <span>
+                            <span class="side-username">
                                 <?php echo $result['firstname'] . ' ' . $result['lastname'] ?>
 
                             </span>
@@ -76,7 +76,7 @@ require_once __DIR__ . '/src/chatController.php'
                             <p>Settings</p>
                             <i class="fas fa-wrench log-ico"></i>
                         </button>
-                        <button class="opt">
+                        <button class="opt add">
                             <p>Add a friend</p>
                             <i class="fas fa-user-plus log-ico"></i>
                         </button>
@@ -100,7 +100,7 @@ require_once __DIR__ . '/src/chatController.php'
             </main>
         </div>
         <div class="logout-modal">
-            <i class="fa fa-bomb ico" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-triangle ico" aria-hidden="true"></i>
             <p>Are you sure you want to logout?</p>
             <div class="confirm">
                 <button class="butn no">No</button>

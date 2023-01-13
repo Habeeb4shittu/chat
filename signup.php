@@ -122,7 +122,7 @@ require_once __DIR__ . '/src/regRequest.php';
 "></script>
         <script src="http://localhost:10/jquery.js
 "></script>
-        <script src="./js/main.js"></script>
+        <script src="./js/main.js" type="module"></script>
     </body>
 
 </html>

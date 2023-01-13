@@ -12,6 +12,7 @@
     align-items    : center;
     border-radius  : $radius;
     transition     : 1s;
+    box-shadow     : 0 0 2px 2px #0000001e;
 
     &.show {
         transform: translateX(0);
