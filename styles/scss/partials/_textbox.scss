@@ -24,7 +24,9 @@
         gap    : .5rem;
 
         .send {
-            cursor: pointer;
+            cursor    : pointer;
+            background: none;
+            border    : none;
 
             .ico {
                 color: $primary;

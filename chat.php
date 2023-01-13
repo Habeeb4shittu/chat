@@ -29,38 +29,10 @@ require_once __DIR__ . '/src/chatController.php';
                         </span>
                     </div>
                     <div class="users">
-                        <div class="btn active">
+                        <!-- <div class="btn active">
                             <img src="./assets/female.jpeg" alt="">
                             <button class="link" type="button">Cassy Lang</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/male.jpeg" alt="">
-                            <button class="link" type="button">Habeeb Shittu</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/female.jpeg" alt="">
-                            <button class="link" type="button">Cassy Lang</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/male.jpeg" alt="">
-                            <button class="link" type="button">Habeeb Shittu</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/female.jpeg" alt="">
-                            <button class="link" type="button">Cassy Lang</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/male.jpeg" alt="">
-                            <button class="link" type="button">Habeeb Shittu</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/female.jpeg" alt="">
-                            <button class="link" type="button">Cassy Lang</button>
-                        </div>
-                        <div class="btn">
-                            <img src="./assets/male.jpeg" alt="">
-                            <button class="link" type="button">Habeeb Shittu</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="side-footer">
                         <div class="avatar">
@@ -90,8 +62,9 @@ require_once __DIR__ . '/src/chatController.php';
             <main>
                 <header>
                     <span class="bars">
-                        <i class="fa fa-bars bars info bar" aria-hidden="true"></i>
+                        <i class="fa fa-bars info bar" aria-hidden="true"></i>
                     </span>
+                    <div class="nav-details"></div>
                     <span>
                         <i class="fa fa-info-circle info" aria-hidden="true"></i>
                     </span>

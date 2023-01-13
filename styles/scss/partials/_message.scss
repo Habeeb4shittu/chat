@@ -1,0 +1,37 @@
+.message {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    animation     : slideIn 1s;
+
+    p.incoming,
+    span.incoming {
+        margin-bottom: 0;
+        align-self   : start;
+    }
+
+    p.outgoing,
+    span.outgoing {
+        margin-bottom: 0;
+        align-self   : end;
+    }
+
+    p {
+        width        : fit-content;
+        max-width    : 18rem;
+        height       : 100%;
+        padding      : 0.2rem;
+        background   : lighten($color: $primary, $amount: 20%);
+        border-radius: $halfPad $halfPad $halfPad 0;
+        color        : $text;
+    }
+
+    p.outgoing {
+        border-radius: $halfPad $halfPad 0 $halfPad;
+    }
+
+    span {
+        font-size: 0.7rem;
+        color    : darken($color: $primary, $amount: 10%);
+    }
+}

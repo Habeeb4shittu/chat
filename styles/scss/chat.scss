@@ -5,6 +5,7 @@
 @import './partials/textbox';
 @import './partials/friends';
 @import './partials/modal';
+@import './partials/message';
 
 body {
     display        : flex;
@@ -81,19 +82,39 @@ main {
         justify-content: space-between;
         padding        : 1rem;
 
+        .nav-details {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            gap            : .5rem;
+
+            .name {
+                font-size: 1rem;
+                color    : $primary;
+            }
+
+            img {
+                width        : 2rem;
+                height       : 2rem;
+                border-radius: 50%;
+            }
+        }
+
         span {
             cursor: pointer;
+
+            &.bars {
+                @media screen and (min-width: $mdScreen) {
+                    display: none;
+                }
+            }
 
             .info {
                 color    : $primary;
                 font-size: 1.2rem;
 
-                &.bars {
-                    @media screen and (min-width: $mdScreen) {
-                        display: none;
-                    }
-                }
             }
+
         }
     }
 

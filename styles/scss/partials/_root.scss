@@ -7,6 +7,10 @@
     scrollbar-width: thin;
 }
 
+::-webkit-scrollbar {
+    border-radius: 10px;
+}
+
 body {
     width     : 100vw;
     height    : 100vh;

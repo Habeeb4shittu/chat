@@ -17,4 +17,10 @@ export function Sidebar() {
         $("main").removeClass("full-width")
         $(".bars").show()
     })
+    $.post("../../src/recentChats.php", null, null,
+        "JSON"
+    )
+        .done(function (result) {
+            console.log(result);
+        })
 }

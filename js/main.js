@@ -1,4 +1,5 @@
 import { Chat } from "./components/Chat.js"
+import { Message } from "./components/Message.js"
 import { Chatpage } from "./pages/chatPage.js"
 import { Friends } from "./pages/friendPage.js"
 let count = 1
@@ -23,7 +24,7 @@ setTimeout(() => {
 }, 1500);
 $(document).ready(function () {
     Chatpage()
-    Chat()
+    // Chat()
     // Friends()
     $(".opt.logout").click(function () {
         $(".logout-modal").addClass("show")
@@ -33,11 +34,12 @@ $(document).ready(function () {
         Friends()
         $(this).prop('disabled', true)
         $(".users").addClass("slide")
+        $("header .nav-details img").remove()
+        $("header .nav-details .name").remove()
         $(".content").find(".back").click(function () {
-            $(".content").find(".my-friends").hide(1000)
-            $(".chatarea").show(1000)
-            $(".opt.add").prop('disabled', false)
-            $(".users").removeClass("slide")
+            $(".close").click()
+            $(".bars").hide()
+            Chat()
         })
     })
     $(".butn.no").click(function () {
