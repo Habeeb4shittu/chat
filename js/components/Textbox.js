@@ -18,14 +18,43 @@ export function Textbox() {
         </div>
     `)
     $(".chatarea").append(Textbox)
+    $("#sendButton").attr('disabled', true);
+    $(".input").on('input', function () {
+        if ($(this).val() == "") {
+            $("#sendButton").attr('disabled', true);
+        } else {
+            $("#sendButton").attr('disabled', false);
+        }
+    })
     $("#sendButton").on("click", function () {
         let id = $(this).data("id")
         let message = $(".input").val()
         $.post("../../src/Message.php", { id, message }, null, "json"
-        )
+        ).fail((res) => {
+            console.log(res.responseText)
+        })
         $(".input").val("")
+        let me = $("#sendButton").data("id")
+        $.post("../../src/friends.php", null, null, "JSON")
+            .done(function (result) {
+                $("#sendButton").attr('disabled', true);
+                let friendId = me.data("id");
+                $(".chats").empty()
+                $(".nav-details").empty()
+                $(".textbox").remove()
+                Chat()
+                $("#sendButton").data({ id: friendId })
+                let user = result.filter((user) => user.id == friendId)[0];
+                let image = $(`<img src="../../assets/${user.image}.jpeg" alt=""> `)
+                let name = $(`
+                                   <span class="name">${user.firstname} ${user.lastname}</span>
+                                `)
+                $(".nav-details").append(image)
+                $(".nav-details").append(name)
+            })
     });
-    setInterval(() => {
+    let fetchMsg = setInterval(fetchMessage, 1000);
+    function fetchMessage() {
         let id = $("#sendButton").data("id")
         $.post("../../src/fetchMessage.php", { id }, null,
             "JSON"
@@ -41,9 +70,18 @@ export function Textbox() {
                     }
                     Message(el.message, status, el.send_time)
                 });
-                $(".chats").scrollTop(
-                    $(".chats")[0].scrollHeight
-                )
+
             })
-    }, 1000);
+    }
+    // $(".chats").on("scroll", function () {
+    //     // console.log($(this).scrollTop());
+    //     // console.log($(this)[0].scrollHeight);
+    //     // if ($(this)[0].scrollHeight < $(this).scrollTop()) {
+    //     // console.log("true");
+    //     clearInterval(fetchMsg)
+    //     // } else {
+    //     //     console.log("false");
+    //     //     setInterval(fetchMsg, 1000)
+    //     // }
+    // })
 }

@@ -5,13 +5,15 @@ try {
     $db = new Database;
     $connect = $db->connect();
     $insert = $connect->prepare('INSERT  INTO  messages(message_id, message, sender, receiver) VALUES( :id, :message,:sender, :receiver )');
+    $msg_id = [$_POST['id'], $_SESSION['user_id']];
+    sort($msg_id);
+    $msg_id = implode("", $msg_id);
     $insert->execute([
-        ':id' => $_POST['id'] . $_SESSION['user_id'],
+        ':id' => $msg_id,
         ':message' => $_POST['message'],
         ':sender' => $_SESSION['user_id'],
         ':receiver' => $_POST['id'],
     ]);
-    // print_r($result);
 } catch (PDOException $th) {
 
 }

@@ -57,7 +57,7 @@
             overflow: hidden;
         }
 
-        .btn {
+        .user {
             display        : flex;
             width          : 100%;
             align-items    : center;
@@ -73,16 +73,23 @@
             }
 
             .link {
-                background  : none;
-                border      : none;
-                text-align  : left;
-                padding     : 0.3rem;
-                width       : 100%;
-                padding-left: 0;
-                color       : $text;
-                position    : relative;
-                font-size   : 1rem;
-                font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background    : none;
+                border        : none;
+                text-align    : left;
+                padding       : 0.3rem;
+                width         : 100%;
+                padding-left  : 0;
+                color         : $text;
+                position      : relative;
+                font-size     : 1rem;
+                display       : flex;
+                flex-direction: column;
+                font-family   : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+                .latest {
+                    font-size: 0.7rem;
+                    opacity  : .7;
+                }
 
                 // width      : fit-content;
             }

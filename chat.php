@@ -18,7 +18,7 @@ require_once __DIR__ . '/src/chatController.php';
     <body>
         <div class="main">
             <aside>
-                <div class="sidebar">
+                <div class="sidebar" data-id="<?=$result['id']?>">
                     <div class="top">
                         <span class="logo">
                             <i class="fas fa-comments logo-ico" aria-hidden="true"></i>

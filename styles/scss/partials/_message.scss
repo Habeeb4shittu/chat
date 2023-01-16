@@ -28,6 +28,8 @@
 
     p.outgoing {
         border-radius: $halfPad $halfPad 0 $halfPad;
+        background   : darken($color: $bg, $amount: 40%);
+        color        : $text;
     }
 
     span {
