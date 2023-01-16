@@ -1,0 +1,36 @@
+.textbox {
+    width          : 100%;
+    height         : 3rem;
+    background     : white;
+    border-radius  : $halfRadius;
+    box-shadow     : 0 0 1px 1px $primary;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    padding        : .5rem;
+
+    .input {
+        height       : 100%;
+        width        : 100%;
+        border       : none;
+        box-shadow   : none;
+        outline      : none;
+        padding-right: 0.5rem;
+        resize       : none;
+    }
+
+    .btns {
+        display: flex;
+        gap    : .5rem;
+
+        .send {
+            cursor    : pointer;
+            background: none;
+            border    : none;
+
+            .ico {
+                color: $primary;
+            }
+        }
+    }
+}

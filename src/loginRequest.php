@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
     }
     if (count($empty) > 0) {
         $error = $empty;
-    } else if ($val['email'] == $logins['email'] && $val['user_password'] == password_verify($logins['password'], $val['user_password'])) {
+    } else if ($val && $val['user_password'] == password_verify($logins['password'], $val['user_password'])) {
         $_SESSION['user_id'] = $val['id'];
         header('location: chat.php');
 
@@ -29,4 +29,7 @@ if (isset($_POST['login'])) {
         return;
     }
 
+}
+if (isset($_SESSION['user_id'])) {
+    header('location: ../chat.php');
 }

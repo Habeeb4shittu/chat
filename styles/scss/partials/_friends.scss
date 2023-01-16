@@ -1,0 +1,151 @@
+.my-friends {
+    height        : 100%;
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    overflow      : auto;
+    padding       : 0.5rem;
+    overflow-x    : hidden;
+    position      : relative;
+    gap           : .5rem;
+
+    .preloader {
+        position       : absolute;
+        width          : 100%;
+        height         : 100%;
+        background     : #00000062;
+        top            : 0;
+        left           : 0;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        img {
+            width: 3rem;
+        }
+    }
+
+    .head {
+        width          : 100%;
+        display        : flex;
+        height         : 2.5rem;
+        justify-content: space-between;
+        align-items    : center;
+        padding        : 0 0.5rem;
+        gap            : .5rem;
+
+        .searchBar {
+            background     : lighten($color: $primary, $amount: 30%);
+            padding        : $halfPad;
+            border-radius  : $radius;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+
+            input {
+                width     : 100%;
+                border    : none;
+                height    : 100%;
+                background: none;
+                box-shadow: none;
+                outline   : none;
+                color     : darken($color: $primary, $amount: 20%);
+
+                &::placeholder {
+                    color: darken($color: $primary, $amount: 20%);
+                }
+            }
+        }
+
+        .back {
+            cursor: pointer;
+
+        }
+
+        h2 {
+            color        : $primary;
+            font-size    : 1.1rem;
+            margin-bottom: 0;
+        }
+    }
+
+    .friends-list {
+        width         : 100%;
+        display       : flex;
+        flex-direction: column;
+        gap           : .5rem;
+        overflow-y    : auto;
+        height        : calc(100% - 2.5rem);
+
+        .details {
+            width          : 100%;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+            background     : $primary;
+            border-radius  : $radius;
+            transition     : 1s;
+            cursor         : pointer;
+            padding        : .4rem;
+            gap            : .5rem;
+
+            &:hover {
+                background: lighten($color: $primary, $amount: 10%);
+
+                .avatar {
+                    p {
+                        >span {
+                            color: $bg;
+                        }
+                    }
+                }
+
+                button {
+                    background: $primary;
+                    color     : $text;
+                }
+            }
+
+            .avatar {
+                display    : flex;
+                align-items: center;
+                width      : fit-content;
+                gap        : .5rem;
+
+
+                img {
+                    width        : 2.5rem;
+                    height       : 2.5rem;
+                    border-radius: 50%;
+                }
+
+                p {
+                    margin-bottom : 0;
+                    display       : flex;
+                    flex-direction: column;
+
+                    >span {
+                        transition: 1s;
+                        font-size : 1rem;
+                        color     : $text;
+                    }
+
+                    .mail {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+
+            button {
+                background      : lighten($color: $primary, $amount: 30%);
+                border-radius   : $halfRadius;
+                color           : $primary;
+                font-size       : 0.9rem;
+                // width        : 10rem;
+                // height       : 2rem;
+                padding         : 0.2rem;
+                transition      : 1s;
+            }
+        }
+    }
+}
