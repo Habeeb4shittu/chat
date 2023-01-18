@@ -28,7 +28,7 @@
 
     p.outgoing {
         border-radius: $halfPad $halfPad 0 $halfPad;
-        background   : darken($color: $bg, $amount: 40%);
+        background   : darken($color: $bg, $amount: 30%);
         color        : $text;
     }
 

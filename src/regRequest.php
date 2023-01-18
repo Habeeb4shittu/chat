@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
             ":lastname" => $details['lastname'],
             ":email" => $details['email'],
             ":gender" => $details['gender'],
-            ":image" => $details['gender'],
+            ":image" => $details['gender'] . '.jpeg',
             ":user_password" => password_hash($details['password'], PASSWORD_DEFAULT),
         ]);
         header('location: index.php');

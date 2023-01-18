@@ -2,6 +2,7 @@ import { Chat } from "./components/Chat.js"
 import { Message } from "./components/Message.js"
 import { Chatpage } from "./pages/chatPage.js"
 import { Friends } from "./pages/friendPage.js"
+import { Settings } from "./pages/settingPage.js"
 let count = 1
 $(".eye").click(function () {
     count++
@@ -26,13 +27,24 @@ $(document).ready(function () {
     Chatpage()
     // Chat()
     // Friends()
+    Settings()
     $(".opt.logout").click(function () {
         $(".logout-modal").addClass("show")
         $(".overlay").addClass("show")
     })
     $(".opt.add").click(function () {
         Friends()
-        $(this).prop('disabled', true)
+        $(".users").addClass("slide")
+        $("header .nav-details img").remove()
+        $("header .nav-details .name").remove()
+        $(".content").find(".back").click(function () {
+            $(".close").click()
+            $(".bars").hide()
+            Chat()
+        })
+    })
+    $(".opt.settings").click(function () {
+        Settings()
         $(".users").addClass("slide")
         $("header .nav-details img").remove()
         $("header .nav-details .name").remove()

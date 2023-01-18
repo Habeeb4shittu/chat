@@ -37,14 +37,14 @@ require_once __DIR__ . '/src/chatController.php';
                     <div class="side-footer">
                         <div class="avatar">
                             <div class="image">
-                                <img src="./assets/<?=$result['image']?>.jpeg" alt="">
+                                <img src="./assets/<?=$result['image']?>" alt="" class="avata">
                             </div>
                             <span class="side-username">
                                 <?php echo $result['firstname'] . ' ' . $result['lastname'] ?>
 
                             </span>
                         </div>
-                        <button class="opt">
+                        <button class="opt settings">
                             <p>Settings</p>
                             <i class="fas fa-wrench log-ico"></i>
                         </button>
@@ -81,7 +81,7 @@ require_once __DIR__ . '/src/chatController.php';
             </div>
         </div>
         <div class="overlay"></div>
-        <script src="http://localhost:10/bootstrap.min.js
+        <script src="http://localhost:10/bootstrap.bundle.min.js
 "></script>
         <script src="http://localhost:10/fontawesome6/js/all.min.js
 "></script>

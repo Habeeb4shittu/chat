@@ -20,7 +20,7 @@ export function Sidebar() {
                 } else {
                     $(".users").append(`
                     <div class="user" data-id="${el.id}">
-                            <img src="./assets/${el.image}.jpeg" alt="">
+                            <img src="./assets/${el.image}" alt="">
                             <button class="link" type="button">${el.firstname} ${el.lastname}
                                 <span class="latest"></span>
                             </button>
@@ -43,9 +43,6 @@ export function Sidebar() {
                             $(".nav-details").empty()
                             $(".textbox").remove()
                             Chat()
-                            $(".chats").scrollTop(
-                                $(".chats")[$(".chats").length - 1].scrollHeight
-                            )
                             $("#sendButton").data({ id: friendId })
                             let user = result.filter((user) => user.id == friendId)[0];
                             let image = $(`<img src="../../assets/${user.image}.jpeg" alt=""> `)

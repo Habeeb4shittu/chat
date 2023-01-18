@@ -21,9 +21,14 @@ export function Friends() {
             </div>
         </div>
     `)
+    let notfound = $(`
+        <p class="results">No results found!!!</p>
+    `)
     $(".content").find(".chatarea").hide(1000)
-    $(".content").append(Friends)
+    $(".content").find(".settings").hide(1000)
+    $(".content").empty().append(Friends)
     $(".content").find(".chatarea").remove()
+    $(".content").find(".settings").remove()
     $.post("../../src/friends.php", null, null, "JSON")
         .done(function (result) {
             result.forEach(elm => {
@@ -31,7 +36,7 @@ export function Friends() {
                 $(".friends-list").append(`
                     <div class="details" data-id="${elm.id}">
                         <div class="avatar">
-                            <img src="../../assets/${elm.image}.jpeg" alt="">
+                            <img src="../../assets/${elm.image}" alt="">
                          <p class="username">
                             <span class="name"> ${elm.firstname} ${elm.lastname}</span>
                         <span class="mail">${elm.email}</span>
@@ -66,11 +71,17 @@ export function Friends() {
         let search = $(this).val()
         let users = $(".details .avatar .username .name")
         users.each(function (i, el) {
+            let user = $(el).parent().parent().parent()
             if ($(el).text().toLowerCase().includes(search.toLowerCase())) {
-                $(el).parent().parent().parent().show()
+                user.addClass("show")
+                user.show()
             } else {
-                $(el).parent().parent().parent().hide()
+                user.removeClass("show")
+                user.hide()
             }
+            let parent = $(".details");
+            let show = parent.filter((i, el) => $(el).hasClass("show"));
+            show.length == 0 ? $(".friends-list").append(notfound) : $(".friends-list").find(".results").remove()
         })
     })
 }

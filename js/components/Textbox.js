@@ -73,6 +73,7 @@ export function Textbox() {
 
             })
     }
+    $(".chats").scrollTop($(".chats")[0].scrollHeight)
     // $(".chats").on("scroll", function () {
     //     // console.log($(this).scrollTop());
     //     // console.log($(this)[0].scrollHeight);
