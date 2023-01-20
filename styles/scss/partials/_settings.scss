@@ -27,6 +27,10 @@
                 color        : $primary;
                 font-size    : 1.1rem;
                 margin-bottom: 0;
+
+                &.dark {
+                    color: darken($color: $primary, $amount: 40%);
+                }
             }
         }
 
@@ -64,6 +68,10 @@
             border         : none;
             padding        : .9rem;
             gap            : .5rem;
+
+            &.dark {
+                background: darken($color: $primary, $amount: 40%);
+            }
 
             &:hover {
                 background: lighten($color: $primary, $amount: 10%);
@@ -133,35 +141,67 @@
         gap            : 1rem;
         padding        : 0.4rem;
 
-        .res {
-            width : 50%;
-            margin: auto;
 
-            .error {
-                color        : $text;
-                background   : red;
-                margin-top   : 0.4rem;
-                border-radius: $halfRadius;
-                padding      : 0.3rem;
-            }
-
-            .success {
-                color        : $text;
-                background   : green;
-                margin-top   : 0.4rem;
-                border-radius: $halfRadius;
-                padding      : 0.3rem;
-            }
-        }
 
         input {
             border       : none;
             border-bottom: 1px solid $primary;
             width        : fit-content;
             outline      : none;
+            caret-color  : $primary;
 
             &:last-of-type {
                 opacity: .5;
+            }
+        }
+    }
+}
+
+.res {
+    width : 50%;
+    margin: auto;
+
+    .error {
+        color        : $text;
+        background   : red;
+        margin-top   : 0.4rem;
+        border-radius: $halfRadius;
+        padding      : 0.3rem;
+    }
+
+    .success {
+        color        : $text;
+        background   : green;
+        margin-top   : 0.4rem;
+        border-radius: $halfRadius;
+        padding      : 0.3rem;
+    }
+}
+
+#themeSettings {
+    #theme {
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        gap            : .3rem;
+
+        div {
+            display        : flex;
+            justify-content: center;
+            gap            : .1rem;
+
+            div {
+                display: flex;
+                gap    : .1rem;
+
+                input {
+                    width: 4rem;
+                }
+
+                label {
+                    color    : $primary;
+                    font-size: 1.2rem;
+                }
             }
         }
     }

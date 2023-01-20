@@ -16,6 +16,7 @@ require_once __DIR__ . '/src/chatController.php';
     </head>
 
     <body>
+        <div class="hidden"><?=$result['theme']?></div>
         <div class="main">
             <aside>
                 <div class="sidebar" data-id="<?=$result['id']?>">
@@ -62,11 +63,11 @@ require_once __DIR__ . '/src/chatController.php';
             <main>
                 <header>
                     <span class="bars">
-                        <i class="fa fa-bars info bar" aria-hidden="true"></i>
+                        <i class="fa fa-bars info bar ico" aria-hidden="true"></i>
                     </span>
                     <div class="nav-details"></div>
                     <span>
-                        <i class="fa fa-info-circle info" aria-hidden="true"></i>
+                        <i class="fa fa-info-circle info ico" aria-hidden="true"></i>
                     </span>
                 </header>
                 <section class="content"></section>

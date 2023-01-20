@@ -1,24 +1,44 @@
 body {
-    display    : grid;
-    padding    : 1rem;
-    place-items: center;
+    display       : grid;
+    // padding    : 1rem;
+    place-items   : center;
+    background    : lighten($color: $bg, $amount: 10%);
 }
 
 form {
-    width         : 100%;
-    max-width     : 20rem;
-    margin        : auto;
-    display       : flex;
-    flex-direction: column;
-    gap           : 1rem;
+    max-width      : 25rem;
+    margin         : auto;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    width          : 22rem;
+    height         : 22rem;
+    padding        : 3rem;
+    gap            : 1rem;
+    border-radius  : 50%;
+    background     : linear-gradient(to right, darken($color: $primary, $amount: 15%), lighten($color: $primary, $amount: 5%), darken($color: $primary, $amount: 15%));
+    box-shadow     : 0 12px 10px rgba(0, 0, 0, 0.429);
+
+    @media screen and (max-width: $mdScreen) {
+        width : 95%;
+        width : 19.5rem;
+        height: 19.5rem;
+    }
 
     &.sign_up {
-        display  : grid;
-        max-width: 30rem;
+        width        : 17rem;
+        display      : grid;
+        max-width    : 25rem;
+        border-radius: 0;
+        height       : fit-content;
+        border-radius: calc($radius + 1rem);
 
         @media screen and (min-width: $lgScreen) {
             align-items          : start;
+            display              : grid;
             grid-template-columns: repeat(2, 1fr);
+            max-width            : 40rem;
+            width                : 38rem;
         }
     }
 
@@ -26,11 +46,11 @@ form {
         width        : 100%;
         display      : flex;
         align-items  : center;
-        background   : white;
+        background   : none;
         border-radius: $halfRadius;
         padding      : $halfPad;
         gap          : 0.3rem;
-        box-shadow   : 0 0 1px 2px lighten($color: $primary, $amount: 60%);
+        box-shadow   : 0 0 1px 2px lighten($color: $primary, $amount: 10%);
 
         &.redBord {
             border: 1.5px solid red;
@@ -48,19 +68,21 @@ form {
             .female {
                 display: flex;
                 gap    : 1rem;
+                color  : $text;
 
                 @media screen and (min-width: $lgScreen) {
                     gap: 0;
                 }
 
                 input {
-                    width: 4rem;
+                    width     : 4rem;
+                    background: none;
                 }
             }
         }
 
         .ico {
-            color: $primary;
+            color: $text;
         }
 
         .eye {
@@ -68,70 +90,52 @@ form {
         }
 
         input {
-            width    : 100%;
-            border   : none;
-            font-size: 1.2rem;
-            outline  : none;
+            width     : 100%;
+            border    : none;
+            font-size : 1.2rem;
+            outline   : none;
+            background: none;
+            color     : $text;
         }
     }
 
     button {
-        width            : 100%;
-        position         : relative;
-        border-radius    : $halfRadius;
-        background       : $primary;
-        border           : none;
-        padding          : $halfPad;
-        color            : $text;
-        transform        : scaleY(0.9);
-        -webkit-transform: scaleY(0.9);
-        -moz-transform   : scaleY(0.9);
-        -ms-transform    : scaleY(0.9);
-        -o-transform     : scaleY(0.9);
+        width        : 100%;
+        position     : relative;
+        overflow     : hidden;
+        border-radius: $halfRadius;
+        background   : $primary;
+        border       : none;
+        padding      : $halfPad;
+        color        : $text;
+        transform    : scaleY(0.9);
 
         &.sign::after {
-            content: "Sign Up";
+            content: "";
         }
 
         &::after {
-            content              : "Login";
-            display              : flex;
-            justify-content      : center;
-            align-items          : center;
-            color                : black;
-            transform            : scaleX(0);
-            width                : 100%;
-            height               : 100%;
-            position             : absolute;
-            background           : $text;
-            top                  : 0;
-            left                 : 0;
-            transition           : 0.3s;
-            border-radius        : inherit;
-            -webkit-border-radius: inherit;
-            -moz-border-radius   : inherit;
-            -ms-border-radius    : inherit;
-            -o-border-radius     : inherit;
-            -webkit-transition   : 0.3s;
-            -moz-transition      : 0.3s;
-            -ms-transition       : 0.3s;
-            -o-transition        : 0.3s;
-            -webkit-transform    : scaleX(0);
-            -moz-transform       : scaleX(0);
-            -ms-transform        : scaleX(0);
-            -o-transform         : scaleX(0);
+            content        : "";
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            color          : black;
+            width          : 3%;
+            height         : 100%;
+            position       : absolute;
+            background     : #ffffff58;
+            top            : 0;
+            left           : 0;
+            transition     : 1s;
+            border-radius  : inherit;
+            transform      : skew(-15deg) translateX(-150%);
         }
 
         &:hover {
-            color: yellow;
 
             &::after {
-                width            : 100%;
-                transform        : scaleX(1);
-                -webkit-transform: scaleX(1);
-                -moz-transform   : scaleX(1);
-                -ms-transform    : scaleX(1);
-                -o-transform     : scaleX(1);
+                width    : 100%;
+                transform: scaleX(1) translateX(150%);
             }
         }
     }
@@ -139,6 +143,8 @@ form {
     p {
         font-size: 0.9rem;
         opacity  : 0.8;
+        color    : $text;
+        margin   : 0 !important;
     }
 
     .foot {
@@ -150,6 +156,7 @@ form {
 
         p {
             text-align: center;
+            margin    : 0 !important;
         }
     }
 }

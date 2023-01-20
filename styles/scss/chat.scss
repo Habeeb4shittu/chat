@@ -12,7 +12,15 @@ body {
     display        : flex;
     justify-content: center;
     align-items    : center;
-    background     : none;
+    background     : linear-gradient(to top right, $bg, $primary);
+
+    &.dark {
+        background: linear-gradient(to right, darken($color: $primary, $amount: 15%), lighten($color: $primary, $amount: 5%), darken($color: $primary, $amount: 15%));
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 .main {
@@ -61,7 +69,7 @@ aside {
 
 main {
     height         : 100%;
-    background     : $text;
+    background     : #ffffff32;
     width          : 100%;
     display        : flex;
     flex-direction : column;

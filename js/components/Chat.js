@@ -16,4 +16,8 @@ export function Chat() {
     $(".opt.add").prop('disabled', false)
     $(".users").removeClass("slide")
     Textbox()
+    if ($(".hidden").text() == "dark") {
+        $(".ico").addClass("dark")
+        $(".outgoing, .incoming").addClass("dark")
+    }
 }

@@ -46,8 +46,8 @@ try {
             } else {
                 echo "Failed";
             }
+            echo "<div class='success'>Settings updated successfully</div>";
         }
-        echo "<div class='success'>Settings updated successfully</div>";
     }
 } catch (PDOException $th) {
 

@@ -49,6 +49,10 @@ export function Friends() {
                     </div>
                 `)
             });
+            if ($(".hidden").text() == "dark") {
+                $(".details").addClass("dark")
+                $(".ico").addClass("dark")
+            }
             $(".preloader").hide()
             $(".details").each((i, el) => {
 
@@ -57,7 +61,7 @@ export function Friends() {
                     Chat()
                     $("#sendButton").data({ id: friendId })
                     let user = result.filter((user) => user.id == friendId)[0];
-                    let image = $(`<img src="../../assets/${user.image}.jpeg" alt=""> `)
+                    let image = $(`<img src="../../assets/${user.image}" alt=""> `)
                     let name = $(`
                        <span class="name">${user.firstname} ${user.lastname}</span>
                     `)

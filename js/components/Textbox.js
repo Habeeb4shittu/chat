@@ -45,7 +45,7 @@ export function Textbox() {
                 Chat()
                 $("#sendButton").data({ id: friendId })
                 let user = result.filter((user) => user.id == friendId)[0];
-                let image = $(`<img src="../../assets/${user.image}.jpeg" alt=""> `)
+                let image = $(`<img src="../../assets/${user.image}" alt=""> `)
                 let name = $(`
                                    <span class="name">${user.firstname} ${user.lastname}</span>
                                 `)
@@ -70,7 +70,10 @@ export function Textbox() {
                     }
                     Message(el.message, status, el.send_time)
                 });
-
+                if ($(".hidden").text() == "dark") {
+                    $(".ico").addClass("dark")
+                    $(".outgoing, .incoming").addClass("dark")
+                }
             })
     }
     $(".chats").scrollTop($(".chats")[0].scrollHeight)

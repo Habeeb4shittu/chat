@@ -24,6 +24,10 @@ export function Sidebar() {
                             <button class="link" type="button">${el.firstname} ${el.lastname}
                                 <span class="latest"></span>
                             </button>
+                            <div class="options">
+                                <span>Block</span>
+                                <span>View Profile</span>
+                            </div>
                         </div>
                 `)
                 }
@@ -45,7 +49,7 @@ export function Sidebar() {
                             Chat()
                             $("#sendButton").data({ id: friendId })
                             let user = result.filter((user) => user.id == friendId)[0];
-                            let image = $(`<img src="../../assets/${user.image}.jpeg" alt=""> `)
+                            let image = $(`<img src="../../assets/${user.image}" alt=""> `)
                             let name = $(`
                                    <span class="name">${user.firstname} ${user.lastname}</span>
                                 `)
@@ -54,6 +58,18 @@ export function Sidebar() {
                         })
                     $(el).parent().parent().find(".active").removeClass("active")
                     $(el).addClass("active")
+                })
+            })
+            $(".options").hide()
+            $(".user").each((i, el) => {
+                $(el).on('contextmenu', function (e) {
+                    console.log("right Clicked");
+                    $(".user").find(".options").hide()
+                    $(el).find(".options").show()
+                    $(".options").click(function () {
+                        console.log("working");
+                    })
+                    e.preventDefault()
                 })
             })
         })

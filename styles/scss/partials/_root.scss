@@ -21,4 +21,8 @@ body {
 .ico {
     color    : $primary;
     font-size: 1.2rem;
+
+    &.dark {
+        color: darken($color: $primary, $amount: 40%);
+    }
 }

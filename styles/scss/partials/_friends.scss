@@ -89,6 +89,10 @@
             padding        : .4rem;
             gap            : .5rem;
 
+            &.dark {
+                background: darken($color: $primary, $amount: 40%);
+            }
+
             &:hover {
                 background: lighten($color: $primary, $amount: 10%);
 

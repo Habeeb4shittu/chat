@@ -1,14 +1,18 @@
 .sidebar {
-    width             : 100%;
-    height            : 100%;
-    background        : $primary;
-    padding           : 0.5rem !important;
+    width          : 100%;
+    height         : 100%;
+    background     : $primary;
+    padding        : 0.5rem !important;
     // display   : grid;
-    display           : flex;
-    gap               : .5rem;
-    flex-direction    : column;
-    justify-content   : space-between;
+    display        : flex;
+    gap            : .5rem;
+    flex-direction : column;
+    justify-content: space-between;
+
     // overflow-y     : auto;
+    &.dark {
+        background: darken($color: $primary, $amount: 40%);
+    }
 
     .top {
         display           : flex;
@@ -66,6 +70,41 @@
             padding-left   : 0;
             position       : relative;
             gap            : .5rem;
+
+            .options {
+                cursor         : pointer;
+                position       : absolute;
+                background     : $text;
+                width          : 100%;
+                display        : flex;
+                flex-direction : column;
+                justify-content: center;
+                align-items    : center;
+                margin         : auto;
+                bottom         : -2.5rem;
+                z-index        : 10;
+                padding        : .008rem 0;
+                border-radius  : $halfPad;
+
+
+                span {
+                    border-bottom: 1px solid #0000003f;
+                    width        : 100%;
+                    color        : $primary;
+                    padding      : 0.2rem;
+                    text-align   : center;
+                    transition   : .5s;
+
+                    &:last-of-type {
+                        border: none;
+                    }
+
+                    &:hover {
+                        background: $primary;
+                        color     : $text;
+                    }
+                }
+            }
 
             img {
                 width        : 2rem;
@@ -168,6 +207,15 @@
             cursor         : pointer;
             transition     : 1s;
             border         : none;
+
+            &.dark {
+                background: darken($color: $primary, $amount: 15%);
+
+                p,
+                .log-ico {
+                    color: $text;
+                }
+            }
 
             &:hover {
                 background: none;

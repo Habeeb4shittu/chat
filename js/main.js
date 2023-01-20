@@ -65,4 +65,33 @@ $(document).ready(function () {
     $(".butn.out").click(function () {
         location.href = '../src/logout.php'
     })
+    console.log($(".hidden").text());
+    $("body").on('DOMSubtreeModified', ".hidden", function () {
+        if ($(".hidden").text() == "dark") {
+            $("body").addClass("dark")
+            $(".sidebar").addClass("dark")
+            $(".opt").addClass("dark")
+            $(".setting").addClass("dark")
+            $(".ico").addClass("dark")
+            $(".details").addClass("dark")
+        } else {
+            $("body").removeClass("dark")
+            $(".sidebar").removeClass("dark")
+            $(".opt").removeClass("dark")
+            $(".setting").removeClass("dark")
+            $(".ico").removeClass("dark")
+            $(".details").removeClass("dark")
+        }
+    })
+    if ($(".hidden").text() == "dark") {
+        $("body").addClass("dark")
+        $(".sidebar").addClass("dark")
+        $(".opt").addClass("dark")
+        $(".setting").addClass("dark")
+        $(".ico").addClass("dark")
+        $(".details").addClass("dark")
+    }
+    $("body").click(function () {
+        $(".user .options").hide()
+    })
 });
