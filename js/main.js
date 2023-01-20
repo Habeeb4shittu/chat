@@ -3,7 +3,7 @@ import { Message } from "./components/Message.js"
 import { Chatpage } from "./pages/chatPage.js"
 import { Friends } from "./pages/friendPage.js"
 import { Settings } from "./pages/settingPage.js"
-let count = 1
+let count = 0
 $(".eye").click(function () {
     count++
     if (count % 2 == 0) {
@@ -39,7 +39,6 @@ $(document).ready(function () {
         $("header .nav-details .name").remove()
         $(".content").find(".back").click(function () {
             $(".close").click()
-            $(".bars").hide()
             Chat()
         })
     })
@@ -50,7 +49,6 @@ $(document).ready(function () {
         $("header .nav-details .name").remove()
         $(".content").find(".back").click(function () {
             $(".close").click()
-            $(".bars").hide()
             Chat()
         })
     })

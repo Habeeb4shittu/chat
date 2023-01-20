@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
         $error = $empty;
     } else if ($val && $val['user_password'] == password_verify($logins['password'], $val['user_password'])) {
         $_SESSION['user_id'] = $val['id'];
-        header('location: chat.php');
+        header('location: message.php');
 
     } else {
         $error["exists"] = "Invalid Login Details";
@@ -31,5 +31,5 @@ if (isset($_POST['login'])) {
 
 }
 if (isset($_SESSION['user_id'])) {
-    header('location: ../chat.php');
+    header('location: ../message.php');
 }

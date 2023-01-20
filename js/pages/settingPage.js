@@ -1,3 +1,4 @@
+import { passwordReset } from "../components/passwordReset.js"
 import { profileSettings } from "../components/profileSettings.js"
 import { themeSettings } from "../components/themeSettings.js"
 
@@ -24,7 +25,7 @@ export function Settings() {
                     <i class="fas fa-sun icon"></i>
                     <h5>Themes</h5>
                 </button>
-                <button class="setting">
+                <button class="setting" data-bs-toggle="modal" data-bs-target="#reset">
                     <i class="fas fa-retweet icon"></i>
                     <h5>Reset My Password</h5>
                 </button>
@@ -49,6 +50,7 @@ export function Settings() {
     $(".content").find(".my-friends").remove()
     profileSettings()
     themeSettings()
+    passwordReset()
     if ($(".hidden").text() == "dark") {
         $(".setting").addClass("dark")
         $(".ico").addClass("dark")

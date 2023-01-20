@@ -26,8 +26,9 @@ export function Textbox() {
             $("#sendButton").attr('disabled', false);
         }
     })
-    $("#sendButton").on("click", function () {
-        let id = $(this).data("id")
+    function send() {
+        $(".chats").scrollTop($(".chats")[0].scrollHeight)
+        let id = $("#sendButton").data("id")
         let message = $(".input").val()
         $.post("../../src/Message.php", { id, message }, null, "json"
         ).fail((res) => {
@@ -52,6 +53,9 @@ export function Textbox() {
                 $(".nav-details").append(image)
                 $(".nav-details").append(name)
             })
+    }
+    $("#sendButton").on("click", function () {
+        send()
     });
     let fetchMsg = setInterval(fetchMessage, 1000);
     function fetchMessage() {
@@ -76,16 +80,10 @@ export function Textbox() {
                 }
             })
     }
-    $(".chats").scrollTop($(".chats")[0].scrollHeight)
-    // $(".chats").on("scroll", function () {
-    //     // console.log($(this).scrollTop());
-    //     // console.log($(this)[0].scrollHeight);
-    //     // if ($(this)[0].scrollHeight < $(this).scrollTop()) {
-    //     // console.log("true");
-    //     clearInterval(fetchMsg)
-    //     // } else {
-    //     //     console.log("false");
-    //     //     setInterval(fetchMsg, 1000)
-    //     // }
-    // })
+    $(".input").on('keyup', function (e) {
+        if (e.key == "Enter") {
+            console.log("Enter pressed");
+            send()
+        }
+    })
 }

@@ -12,6 +12,11 @@ export function Sidebar() {
         $("main").removeClass("full-width")
         $(".bars").show()
     })
+    $(".opt").click(() => {
+        $("aside").removeClass("slide")
+        $("main").removeClass("full-width")
+        $(".bars").show()
+    })
     $.post("../../src/recentChats.php", null, null, "JSON")
         .done(function (result) {
             $(result).each(function (i, el) {
@@ -40,6 +45,9 @@ export function Sidebar() {
                 })
             $(".user").each((i, el) => {
                 $(el).click(function () {
+                    $("aside").removeClass("slide")
+                    $("main").removeClass("full-width")
+                    $(".bars").show()
                     let me = $(this)
                     $.post("../../src/friends.php", null, null, "JSON")
                         .done(function (result) {
@@ -91,11 +99,11 @@ export function Sidebar() {
     //                 }
     //             })
     //         })
-    // $(".users").mouseenter(function () {
-    //     clearInterval(recChat)
-    // });
-    // $(".users").mouseleave(function () {
-    //     setInterval(recChat, 1000)
-    // });
+    //     $(".users").mouseenter(function () {
+    //         clearInterval(recChat)
+    //     });
+    //     $(".users").mouseleave(function () {
+    //         setInterval(recChat, 1000)
+    //     });
     // }
 }

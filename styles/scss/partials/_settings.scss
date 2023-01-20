@@ -133,27 +133,63 @@
     }
 
     form {
-        display        : flex;
-        flex-direction : column;
-        justify-content: center;
-        align-items    : center;
-        width          : 100%;
-        gap            : 1rem;
-        padding        : 0.4rem;
-
-
-
         input {
-            border       : none;
-            border-bottom: 1px solid $primary;
-            width        : fit-content;
-            outline      : none;
-            caret-color  : $primary;
-
             &:last-of-type {
                 opacity: .5;
             }
         }
+    }
+}
+
+form {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 100%;
+    gap            : 1rem;
+    padding        : 0.4rem;
+
+    .inputs {
+        width        : 60%;
+        display      : flex;
+        align-items  : center;
+        background   : none;
+        border-radius: $halfRadius;
+        padding      : $halfPad;
+        gap          : 0.3rem;
+        box-shadow   : 0 0 1px 1px lighten($color: $primary, $amount: 10%);
+
+        .ico {
+            color: $primary;
+        }
+
+        .eye {
+            cursor: pointer;
+        }
+
+        input {
+            width      : 100%;
+            border     : none;
+            font-size  : 1.5rem;
+            outline    : none;
+            background : none;
+            color      : $primary;
+            caret-color: $primary;
+
+            &::placeholder {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    input {
+        border       : none;
+        border-bottom: 1px solid $primary;
+        width        : fit-content;
+        outline      : none;
+        caret-color  : $primary;
+        height       : 2rem;
     }
 }
 
