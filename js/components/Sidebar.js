@@ -1,4 +1,5 @@
 import { Chat } from "./Chat.js";
+import { profileView } from "./viewProfile.js";
 
 export function Sidebar() {
     $(".bars").click(function () {
@@ -30,8 +31,8 @@ export function Sidebar() {
                                 <span class="latest"></span>
                             </button>
                             <div class="options">
-                                <span>Block</span>
-                                <span>View Profile</span>
+                                <span class="block">Block</span>
+                                <span class="profile-view">View Profile</span>
                             </div>
                         </div>
                 `)
@@ -71,15 +72,12 @@ export function Sidebar() {
             $(".options").hide()
             $(".user").each((i, el) => {
                 $(el).on('contextmenu', function (e) {
-                    console.log("right Clicked");
                     $(".user").find(".options").hide()
                     $(el).find(".options").show()
-                    $(".options").click(function () {
-                        console.log("working");
-                    })
                     e.preventDefault()
                 })
             })
+            profileView()
         })
     // let recChat = setInterval(recentChat, 1000)
     // function recentChat() {

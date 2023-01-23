@@ -27,7 +27,7 @@ $(document).ready(function () {
     Chatpage()
     // Chat()
     // Friends()
-    Settings()
+    // Settings()
     $(".opt.logout").click(function () {
         $(".logout-modal").addClass("show")
         $(".overlay").addClass("show")
@@ -58,6 +58,7 @@ $(document).ready(function () {
     })
     $(".overlay").click(function () {
         $(".logout-modal").removeClass("show")
+        $(".profile").removeClass("show")
         $(this).removeClass("show")
     })
     $(".butn.out").click(function () {

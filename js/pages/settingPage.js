@@ -1,3 +1,4 @@
+import { deleteAccount } from "../components/deleteAccount.js"
 import { passwordReset } from "../components/passwordReset.js"
 import { profileSettings } from "../components/profileSettings.js"
 import { themeSettings } from "../components/themeSettings.js"
@@ -17,7 +18,7 @@ export function Settings() {
                 </div>
             </div>
             <div class="set">
-                <button class="setting profile" type="button" data-bs-toggle="modal" data-bs-target="#modelId">
+                <button class="setting profilebtn" type="button" data-bs-toggle="modal" data-bs-target="#modelId">
                     <i class="fas fa-id-badge icon"></i>
                     <h5>Profile Settings</h5>
                 </button>
@@ -29,7 +30,7 @@ export function Settings() {
                     <i class="fas fa-retweet icon"></i>
                     <h5>Reset My Password</h5>
                 </button>
-                <button class="setting">
+                <button class="setting delete">
                     <i class="fas fa-trash icon"></i>
                     <h5>Delete my account</h5>
                 </button>
@@ -39,7 +40,7 @@ export function Settings() {
                 </button>
             </div>
             <div class="foot">
-                By &copy; Halbion <i class="fab fa-dev ico"></i> 
+                App by &copy; Halbion <i class="fab fa-dev ico"></i> 
             </div>
          </div>
     `)
@@ -51,10 +52,15 @@ export function Settings() {
     profileSettings()
     themeSettings()
     passwordReset()
+    deleteAccount()
     if ($(".hidden").text() == "dark") {
         $(".setting").addClass("dark")
         $(".ico").addClass("dark")
         $(".head h3").addClass("dark")
     }
+    $(".delete").click(() => {
+        $(".delete-modal").toggleClass("show")
+        $(".overlay2").addClass("show")
+    })
 
 }

@@ -1,8 +1,9 @@
-.logout-modal {
-    width          : 260px;
+.logout-modal,
+.delete-modal {
+    width          : 300px;
     background     : white;
     height         : fit-content;
-    padding        : 1rem;
+    padding        : 1.5rem;
     position       : fixed;
     z-index        : 4;
     display        : flex;
@@ -11,8 +12,14 @@
     justify-content: center;
     align-items    : center;
     border-radius  : $radius;
+    gap            : .5rem;
     transition     : 1s;
     box-shadow     : 0 0 2px 2px #0000001e;
+
+    &.delete-modal {
+        width: 380px;
+        gap  : 1rem;
+    }
 
     &.show {
         transform: translateX(0);
@@ -44,13 +51,63 @@
     }
 }
 
-.overlay {
+.profile {
+    background     : white;
+    height         : fit-content;
+    padding        : 1.5rem;
+    position       : fixed;
+    z-index        : 4;
+    display        : flex;
+    transform      : translateX(-500%);
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    border-radius  : $radius;
+    gap            : .5rem;
+    transition     : 1s;
+    box-shadow     : 0 0 2px 2px #0000001e;
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    .image {
+        width        : 6rem;
+        height       : 6rem;
+        border-radius: 50%;
+        overflow     : hidden;
+
+        img {
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+    .detail {
+        width          : 100%;
+        display        : flex;
+        justify-content: space-between;
+        gap            : 1rem;
+
+        h2 {
+            word-spacing: 1rem;
+            color       : $primary;
+            font-size   : 1.2rem;
+        }
+    }
+}
+
+.overlay,
+.overlay2 {
     width     : 100vw;
     height    : 100vh;
     position  : fixed;
     background: #000000ab;
     transition: 1s;
     display   : none;
+    top       : 0;
+    left      : 0;
 
     &.show {
         display: block;
