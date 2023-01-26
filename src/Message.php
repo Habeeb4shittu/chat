@@ -14,6 +14,20 @@ try {
         ':sender' => $_SESSION['user_id'],
         ':receiver' => $_POST['id'],
     ]);
+    
+    $exists = $connect->prepare("SELECT COUNT(*) FROM friends WHERE friend_id = :id");
+    $exists->execute(["id"=>$msg_id]);
+    $result = $exists->fetch(PDO::FETCH_COLUMN);
+    
+    if ($result <= 0) {
+        $friend = $connect->prepare('INSERT INTO friends (friend_id, sender, receiver) VALUES(:id, :sender, :receiver)');
+        $friend->execute([
+            ':id' => $msg_id,
+            ':sender' => $_SESSION['user_id'],
+            ':receiver' => $_POST['id'],
+        ]);
+    }
+    
 } catch (PDOException $th) {
 
 }

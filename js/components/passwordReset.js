@@ -55,6 +55,7 @@ export function passwordReset() {
             })
     })
     $(".eye").click(function () {
+        console.log($(this).parent().find(".password").prop("type"));
         if ($(this).parent().find(".password").prop("type") == "password") {
             $(this).parent().find(".password").prop({ "type": "text" })
             $(this).empty().append(`

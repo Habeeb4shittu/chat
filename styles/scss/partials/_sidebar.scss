@@ -87,13 +87,15 @@
                 border-radius  : $halfPad;
 
 
-                span {
+                button {
                     border-bottom: 1px solid #0000003f;
                     width        : 100%;
                     color        : $primary;
                     padding      : 0.2rem;
                     text-align   : center;
                     transition   : .5s;
+                    border       : none;
+                    border-radius: inherit;
 
                     &:last-of-type {
                         border: none;

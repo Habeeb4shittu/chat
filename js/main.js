@@ -64,7 +64,6 @@ $(document).ready(function () {
     $(".butn.out").click(function () {
         location.href = '../src/logout.php'
     })
-    console.log($(".hidden").text());
     $("body").on('DOMSubtreeModified', ".hidden", function () {
         if ($(".hidden").text() == "dark") {
             $("body").addClass("dark")

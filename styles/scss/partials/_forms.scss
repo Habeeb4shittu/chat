@@ -11,8 +11,8 @@ form {
     display        : flex;
     flex-direction : column;
     justify-content: center;
-    width          : 22rem;
-    height         : 22rem;
+    width          : 24rem;
+    height         : 24rem;
     padding        : 3rem;
     gap            : 1rem;
     border-radius  : 50%;
@@ -39,6 +39,16 @@ form {
             grid-template-columns: repeat(2, 1fr);
             max-width            : 40rem;
             width                : 38rem;
+        }
+    }
+
+    a {
+        color  : $bg;
+        opacity: 0.8;
+
+        &:hover {
+            color  : $bg;
+            opacity: .9;
         }
     }
 
@@ -157,6 +167,10 @@ form {
         p {
             text-align: center;
             margin    : 0 !important;
+
+            a {
+                color: $bg;
+            }
         }
     }
 }

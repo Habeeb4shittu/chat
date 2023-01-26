@@ -40,7 +40,7 @@ export function Settings() {
                 </button>
             </div>
             <div class="foot">
-                App by &copy; Halbion <i class="fab fa-dev ico"></i> 
+                Chat App by  Halbion <i class="fab fa-dev ico"></i> 
             </div>
          </div>
     `)

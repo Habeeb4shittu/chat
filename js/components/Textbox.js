@@ -3,7 +3,7 @@ import { Message } from "./Message.js";
 export function Textbox() {
     let Textbox = $(`
         <div class="textbox">
-            <textarea type="text" name="message" placeholder="Start typing your message..." class="input"></textarea>
+            <textarea type="text" name="message" placeholder="Start typing your message..." class="input" title="message"></textarea>
             <div class="btns">
             <label for="img">
                 <span class="send">
@@ -32,7 +32,6 @@ export function Textbox() {
         let message = $(".input").val()
         $.post("../../src/Message.php", { id, message }, null, "json"
         ).fail((res) => {
-            console.log(res.responseText)
         })
         $(".input").val("")
         let me = $("#sendButton").data("id")
@@ -82,7 +81,6 @@ export function Textbox() {
     }
     $(".input").on('keyup', function (e) {
         if (e.key == "Enter") {
-            console.log("Enter pressed");
             send()
         }
     })

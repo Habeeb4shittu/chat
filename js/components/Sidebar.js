@@ -20,7 +20,7 @@ export function Sidebar() {
     })
     $.post("../../src/recentChats.php", null, null, "JSON")
         .done(function (result) {
-            $(result).each(function (i, el) {
+            $.each(result, (i, el) => {
                 if (el.id == $(".sidebar").data("id")) {
                     return
                 } else {
@@ -31,8 +31,8 @@ export function Sidebar() {
                                 <span class="latest"></span>
                             </button>
                             <div class="options">
-                                <span class="block">Block</span>
-                                <span class="profile-view">View Profile</span>
+                                <button class="block">Block</button>
+                                <button class="profile-view">View Profile</button>
                             </div>
                         </div>
                 `)
@@ -78,6 +78,18 @@ export function Sidebar() {
                 })
             })
             profileView()
+            $(".block").each(function (i, el) {
+                $(el).click(function () {
+                    $(el).parent().parent().unbind()
+                    let id = $(this).parent().parent().data("id");
+                    $.post("../../src/blockUser.php", { id }, null,
+                        "JSON"
+                    )
+                        .done(function (res) {
+                            $(el).parent().parent().remove()
+                        })
+                })
+            })
         })
     // let recChat = setInterval(recentChat, 1000)
     // function recentChat() {

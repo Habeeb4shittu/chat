@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/src/loginRequest.php';
+// mail('habeeb4shittu.@gmail.com', 'reset password', "Your link to reset your password is this <a href=''>Reset Password</a>")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +48,7 @@ require_once __DIR__ . '/src/loginRequest.php';
                         <i class="fa fa-eye ico " aria-hidden="true"></i>
                     </span>
                 </div>
+                <a href="">Forgotten password?</a>
                 <?php if (isset($error["password"])) {?>
                 <div class="error">
                     <p class="text-danger"><?=$error["password"]?></p>

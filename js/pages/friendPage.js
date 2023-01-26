@@ -70,6 +70,17 @@ export function Friends() {
                 })
 
             })
+            $(".avatar").click(function () {
+                let id = $(this).parent().data("id")
+                console.log($(".profile"))
+                $("body").find($(`.profile`)).removeClass("show")
+                $("body").find($(`.profile${id}`)).addClass("show")
+                $(".overlay").addClass("show")
+                $(".close").click(() => {
+                    $(".overlay").removeClass("show")
+                    $("body").find($(`.profile`)).removeClass("show")
+                })
+            })
         })
     $("#search").on('input', function () {
         let search = $(this).val()
